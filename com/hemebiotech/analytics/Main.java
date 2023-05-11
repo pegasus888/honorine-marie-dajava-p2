@@ -8,21 +8,17 @@ import java.util.TreeMap;
 
 public class Main {
 
-    public static void main(String[] args) {
-
-        ISymptomReader myReader = new ReadSymptomDataFromFile("symptoms.txt");
-        ISymptomWriter myWriter = new WriteSymptomDataToFile();
-        AnalyticsCounter analyticsCounter = new AnalyticsCounter(myReader, myWriter);
-
-        List<String> listOfSymptoms;
-
-        listOfSymptoms = analyticsCounter.getSymptoms();
-
-        Map<String, Integer> counting = analyticsCounter.countSymptoms(listOfSymptoms);
-
-        SortedMap<String, Integer> ordering = analyticsCounter.sortSymptoms(counting);
-
-        analyticsCounter.writeSymptoms(ordering);
-
-    }
+  /**
+  * Main method implementation to run Hemebiotech Analytics Program.
+  */
+  public static void main(String[] args) {
+    ISymptomReader myReader = new ReadSymptomDataFromFile("symptoms.txt");
+    ISymptomWriter myWriter = new WriteSymptomDataToFile();
+    AnalyticsCounter analyticsCounter = new AnalyticsCounter(myReader, myWriter);
+    List<String> listOfSymptoms;
+    listOfSymptoms = analyticsCounter.getSymptoms();
+    Map<String, Integer> counting = analyticsCounter.countSymptoms(listOfSymptoms);
+    SortedMap<String, Integer> ordering = analyticsCounter.sortSymptoms(counting);
+    analyticsCounter.writeSymptoms(ordering);
+  }
 }

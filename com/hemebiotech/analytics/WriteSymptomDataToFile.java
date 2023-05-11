@@ -8,36 +8,36 @@ import java.util.Map;
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
 
-    private String fileName;
+  private String fileName;
 
-    /**
-     * Write a map in a file named result.out.
-     * One item by line with format "key:value".
-     * @param symptoms Map with ordered symptoms and occurrences
-     */
-
-
-    @Override
-    public void writeSymptoms(Map<String, Integer> symptoms) {
-
-        fileName = "result.out";
+/**
+* Write a map in a file named result.out.
+* One item by line with format "key:value".
+* @param symptoms Map with ordered symptoms and occurrences
+*/
 
 
-        try {
-            FileWriter writer = new FileWriter(fileName);
-            BufferedWriter bw = new BufferedWriter(writer);
+  @Override
+  public void writeSymptoms(Map<String, Integer> symptoms) {
 
-            for (Map.Entry<String, Integer> mapEntry : symptoms.entrySet()) {
-                bw.write(mapEntry.getKey() + " : " + mapEntry.getValue());
-                bw.newLine();
+      fileName = "result.out";
 
-            }
-            bw.close();
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-    }
+      try {
+          FileWriter writer = new FileWriter(fileName);
+          BufferedWriter bw = new BufferedWriter(writer);
+
+          for (Map.Entry<String, Integer> mapEntry : symptoms.entrySet()) {
+              bw.write(mapEntry.getKey() + " : " + mapEntry.getValue());
+              bw.newLine();
+
+          }
+          bw.close();
+          writer.close();
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
+
+  }
 
 }
