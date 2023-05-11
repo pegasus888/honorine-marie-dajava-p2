@@ -16,9 +16,9 @@ public class AnalyticsCounter {
   ISymptomWriter writer;
   
   /**
-  * Constructor
-  * @param reader reads data From File
-  * @param writer writes data To File
+  * Constructor.
+  * @param reader reads data From File.
+  * @param writer writes data To File.
   */
   AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
     this.reader = reader;
@@ -48,8 +48,8 @@ public class AnalyticsCounter {
   /**
   * Counts symptoms occurrences.
   * 
-  * @param symptoms symptoms list from getSymptoms method
-  * @return symptoms occurrences map
+  * @param symptoms symptoms list from getSymptoms method.
+  * @return symptoms occurrences map.
   */
   public Map<String, Integer> countSymptoms(List<String> symptoms) {
     Map<String, Integer> counter = new HashMap<>();
@@ -66,8 +66,8 @@ public class AnalyticsCounter {
   /**
   * Symptoms list in alphabetical order.
   * 
-  * @param symptoms symptoms map from countSymptoms method
-  * @return an ordered map
+  * @param symptoms symptoms map from countSymptoms method.
+  * @return an ordered map.
   */
   public SortedMap<String, Integer> sortSymptoms(Map<String, Integer> symptoms) {
     SortedMap<String, Integer> sortedSymptoms = new TreeMap<>();
